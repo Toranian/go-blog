@@ -1,0 +1,48 @@
+blog
+images
+main
+go.sum
+.env
+
+
+# Build artifacts
+*.a
+*.o
+*.out
+*.exe
+*.test
+*.prof
+
+# Go modules
+vendor/
+
+# Go binaries
+/bin/
+
+# Go workspace files
+go.work
+go.work.sum
+
+# Log files
+*.log
+
+# IDE and editor folders
+.idea/
+.vscode/
+*.suo
+*.sw?
+*.sublime-workspace
+*.sublime-project
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Other system-specific files
+*.tmp
+*.bak
+*.orig
+*.log
+*.cache
+*.seed
+*.pid
