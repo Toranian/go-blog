@@ -5,7 +5,9 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"net/url"
 	"os"
+	"path"
 	"strconv"
 
 	"github.com/gomarkdown/markdown"
@@ -32,6 +34,19 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fileName := name + ".md"
 	if name == "" {
 		fileName = "index.md"
+		name = "Blog"
+	} else {
+		// Set the name to the title of the blog post
+		// Extract the path from the URL
+		parsedURL, err := url.Parse(name)
+		if err != nil {
+			panic(err)
+		}
+		urlPath := parsedURL.Path
+
+		// Get the last part of the path
+		lastPart := path.Base(urlPath)
+		name = lastPart
 	}
 
 	md, err := os.ReadFile("blog/" + fileName)
