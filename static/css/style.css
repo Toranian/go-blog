@@ -67,7 +67,7 @@ a::before {
   border-radius: 2px;
 }
 a:hover::before {
-  transform: translateX(-100%);
+  transform: translateX(100%);
 }
 
 /* Secondary state */
@@ -79,7 +79,7 @@ a::after {
   width: 100%;
   height: 2px;
   background-color: blue;
-  transform: translateX(100%);
+  transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
   background-color: #333;
   border-radius: 2px;
