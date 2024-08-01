@@ -24,15 +24,70 @@ h4,
 h5,
 h6 {
   font-family: "Sen", sans-serif;
+  margin: 22px 0 0 0;
 }
+
+p {
+  margin: 0 0 22px 0;
+}
+
+iframe {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 4px;
+}
+
 a {
-  border-bottom: 1px solid #444444;
-  color: #444444;
+  position: relative;
+  display: inline-block;
+  color: #444;
+  font-weight: 500;
   text-decoration: none;
+  font-size: 18px;
+  overflow: hidden;
+  transform: translateY(10px);
+  transition: color 0.2s ease-in-out;
 }
 a:hover {
-  border-bottom: 0;
+  color: #222;
 }
+
+/* Initial state */
+a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 100%;
+  height: 2px;
+  opacity: 0.7;
+  background-color: #444;
+  transform: translateX(0);
+  transition: transform 0.2s ease-in-out;
+  border-radius: 2px;
+}
+a:hover::before {
+  transform: translateX(-100%);
+}
+
+/* Secondary state */
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 100%;
+  height: 2px;
+  background-color: blue;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  background-color: #333;
+  border-radius: 2px;
+}
+a:hover::after {
+  transform: translateX(0);
+}
+
 .content {
   min-height: calc(100vh - 75px);
 }
