@@ -31,8 +31,12 @@
       </nav>
     </header>
 
-    <button onclick="toggleExpandCode()">Expand Code</button>
-    <button onclick="toggleDarkMode()">Theme</button>
+    <button onclick="toggleExpandCode()" id="expand-button">
+      Expand Code
+    </button>
+    <button onclick="toggleDarkMode()" id="dark-mode-button">
+      Dark Mode
+    </button>
     <main>{{.Body}}</main>
   </div>
   <footer>
