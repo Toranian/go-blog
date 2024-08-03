@@ -12,6 +12,7 @@ go.sum
 *.exe
 *.test
 *.prof
+tmp
 
 # Go modules
 vendor/

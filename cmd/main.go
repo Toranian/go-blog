@@ -128,9 +128,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		name = lastPart
 	}
 
-	missingPage, err := template.ParseFiles("components/404.html")
+	fmt.Println("Request for", fileName)
+	missingPage, err := template.ParseFiles("web/components/404.html")
 
-	md, err := os.ReadFile("blog/" + fileName)
+	md, err := os.ReadFile("web/blog/" + fileName)
 	if err != nil {
 		missingPage.Execute(w, nil)
 		return
@@ -139,7 +140,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	html := mdToHTML(md)
 	htmlContent := template.HTML(html)
 
-	tmpl, err := template.ParseFiles("components/template.html")
+	tmpl, err := template.ParseFiles("web/components/template.html")
 
 	if err != nil {
 		http.Error(w, "Template parsing error", http.StatusInternalServerError)
@@ -165,7 +166,7 @@ func main() {
 	portStr := strconv.Itoa(int(port))
 	url := "http://localhost:" + portStr
 
-	fs := http.FileServer(http.Dir("./static"))
+	fs := http.FileServer(http.Dir("./web/static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	http.HandleFunc("/", handler)
