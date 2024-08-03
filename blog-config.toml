@@ -1,0 +1,20 @@
+[metadata]
+title = "Blog"
+description = "Blog built in Go!"
+author = "Isaac Morrow"
+keywords = ["blog", "go", "golang", "static", "site", "generator"]
+
+[cssvariables] # Optional
+lightthemebackground = "#faf3e0"
+lightthemetext = "#444"
+lightthemeaccent = "#333"
+lightthemelink = "#333"
+
+darkthemebackground = "#1b2432"
+darkthemetext = "#f5f5f5"
+darkthemeaccent = "#9ecfff"
+darkthemelink = "#9ec"
+
+maincontentwidth = "800px"
+codeblockwidth = "1000px"
+

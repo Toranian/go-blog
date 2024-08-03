@@ -9,6 +9,7 @@ require (
 )
 
 require (
+	github.com/BurntSushi/toml v1.4.0 // indirect
 	github.com/dlclark/regexp2 v1.11.2 // indirect
 	golang.org/x/image v0.18.0 // indirect
 )

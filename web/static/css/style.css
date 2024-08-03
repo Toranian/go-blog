@@ -1,6 +1,15 @@
 :root {
-  --main-bg-color: red;
-  --main-text-color: #000;
+  --bg: #faf3e0;
+  --text: #444;
+  --accent: #333;
+  --link: #333;
+  --dark-bg: #1b2432;
+  --dark-text: #f5f5f5;
+  --dark-accent: #9ecfff;
+  --dark-link: #9ec;
+  --mw: 800px;
+  --cw: 1000px;
+  --rounded: 6px;
 }
 
 html {
@@ -9,9 +18,8 @@ html {
 
 body {
   margin: 0% auto;
-  /* background: #faf3e0; */
-  background: var(--main-bg-color);
-  color: #444444;
+  background: var(--bg);
+  color: var(--text);
   font-size: 18px;
   line-height: 1.8;
   max-width: 800px;
@@ -49,7 +57,7 @@ iframe {
 a {
   position: relative;
   display: inline-block;
-  color: #444;
+  color: var(--link);
   font-weight: 500;
   text-decoration: none;
   font-size: 18px;
@@ -70,7 +78,7 @@ a::before {
   transform: translateX(0);
   transition: transform 0.2s ease-in-out;
   border-radius: 2px;
-  background-color: #333;
+  background-color: var(--link);
 }
 
 a:hover::before {
@@ -87,7 +95,7 @@ a::after {
   height: 2px;
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
-  background-color: #333;
+  background-color: var(--accent);
   border-radius: 2px;
 }
 
@@ -126,10 +134,10 @@ img {
   width: 100%;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 800px) {
   .expand {
-    width: 1000px;
-    transform: translateX(-100px);
+    width: calc(var(--mw) + var(--cw) - var(--mw));
+    transform: translateX(calc((var(--cw) - var(--mw)) / 2 * -1));
   }
 }
 
@@ -203,8 +211,8 @@ nav .nav-links {
 
 /* Dark mode styles */
 .dark-mode {
-  background-color: #1b2432;
-  color: #f5f5f5;
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
   /* Add more styles for other elements if needed */
 }
 .dark-mode h1,
@@ -213,18 +221,21 @@ nav .nav-links {
 .dark-mode h4,
 .dark-mode h5,
 .dark-mode h6 {
-  color: #f5f5f5;
+  color: var(--dark-text);
 }
 .dark-mode a {
-  color: #9ecfff;
+  color: var(--dark-link);
 }
 .dark-mode button {
-  border-color: #9ecfff;
-  color: #9ecfff;
+  border-color: var(--dark-accent);
+  color: var(--dark-accent);
 }
 .dark-mode button:hover {
-  background-color: #9ecfff;
-  color: #1b2432;
+  background-color: var(--dark-accent);
+  color: var(--dark-bg);
+}
+.dark-mode button::before:hover {
+  background-color: var(--dark-accent);
 }
 .dark-mode #logo {
   filter: invert(1);

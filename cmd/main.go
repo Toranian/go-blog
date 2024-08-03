@@ -19,6 +19,8 @@ import (
 	"github.com/gomarkdown/markdown/ast"
 	"github.com/gomarkdown/markdown/html"
 	"github.com/gomarkdown/markdown/parser"
+
+	config "goblog/internal/configure"
 )
 
 // renderParagraph handles the rendering of paragraph nodes
@@ -165,6 +167,9 @@ func main() {
 	const port uint16 = 3000
 	portStr := strconv.Itoa(int(port))
 	url := "http://localhost:" + portStr
+
+	// Load the configuration from the TOML file
+	config.GetConfigFromTOML()
 
 	fs := http.FileServer(http.Dir("./web/static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
