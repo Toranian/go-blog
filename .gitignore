@@ -3,6 +3,7 @@ images
 main
 go.sum
 .env
+svg
 
 
 # Build artifacts
@@ -12,6 +13,7 @@ go.sum
 *.exe
 *.test
 *.prof
+*.css.map
 tmp
 
 # Go modules
