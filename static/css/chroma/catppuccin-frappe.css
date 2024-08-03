@@ -1,0 +1,385 @@
+/* static/styles.css */
+.code-block {
+  background-color: #303446;
+  color: #c6d0f5;
+}
+
+.k {
+  /* Keyword */
+  color: #ca9ee6;
+}
+
+.kr {
+  /* KeywordReserved */
+  color: #ca9ee6;
+}
+
+.kp {
+  /* KeywordPseudo */
+  color: #ca9ee6;
+}
+
+.kc {
+  /* KeywordConstant */
+  color: #ef9f76;
+}
+
+.kd {
+  /* KeywordDeclaration */
+  color: #e78284;
+}
+
+.kn {
+  /* KeywordNamespace */
+  color: #81c8be;
+}
+
+.kt {
+  /* KeywordType */
+  color: #e78284;
+}
+
+.n {
+  /* Name */
+  color: #c6d0f5;
+}
+
+.nc {
+  /* NameClass */
+  color: #e5c890;
+}
+
+.no {
+  /* NameConstant */
+  color: #e5c890;
+}
+
+.nd {
+  /* NameDecorator */
+  font-weight: bold;
+  color: #8caaee;
+}
+
+.ne {
+  /* NameEntity */
+  color: #81c8be;
+}
+
+.nx {
+  /* NameException */
+  color: #ef9f76;
+}
+
+.nf {
+  /* NameFunction */
+  color: #8caaee;
+}
+
+.fm {
+  /* NameFunctionMagic */
+  color: #8caaee;
+}
+
+.nl {
+  /* NameLabel */
+  color: #99d1db;
+}
+
+.nn {
+  /* NameNamespace */
+  color: #ef9f76;
+}
+
+.np {
+  /* NameProperty */
+  color: #ef9f76;
+}
+
+.nt {
+  /* NameTag */
+  color: #ca9ee6;
+}
+
+.v {
+  /* NameVariable */
+  color: #f2d5cf;
+}
+
+.vc {
+  /* NameVariableClass */
+  color: #f2d5cf;
+}
+
+.vg {
+  /* NameVariableGlobal */
+  color: #f2d5cf;
+}
+
+.vi {
+  /* NameVariableInstance */
+  color: #f2d5cf;
+}
+
+.vm {
+  /* NameVariableMagic */
+  color: #f2d5cf;
+}
+
+.na {
+  /* NameAttribute */
+  color: #8caaee;
+}
+
+.nb {
+  /* NameBuiltin */
+  color: #99d1db;
+}
+
+.bp {
+  /* NameBuiltinPseudo */
+  color: #99d1db;
+}
+
+.nc {
+  /* NameOther */
+  color: #c6d0f5;
+}
+
+.l {
+  /* Literal */
+  color: #c6d0f5;
+}
+
+.ld {
+  /* LiteralDate */
+  color: #c6d0f5;
+}
+
+.s {
+  /* LiteralString */
+  color: #a6d189;
+}
+
+.sc {
+  /* LiteralStringChar */
+  color: #a6d189;
+}
+
+.s1 {
+  /* LiteralStringSingle */
+  color: #a6d189;
+}
+
+.s2 {
+  /* LiteralStringDouble */
+  color: #a6d189;
+}
+
+.sx {
+  /* LiteralStringBacktick */
+  color: #a6d189;
+}
+
+.sr {
+  /* LiteralStringRegex */
+  color: #81c8be;
+}
+
+.ss {
+  /* LiteralStringSymbol */
+  color: #a6d189;
+}
+
+.si {
+  /* LiteralStringInterpol */
+  color: #a6d189;
+}
+
+.sa {
+  /* LiteralStringAffix */
+  color: #e78284;
+}
+
+.sd {
+  /* LiteralStringDelimiter */
+  color: #8caaee;
+}
+
+.se {
+  /* LiteralStringEscape */
+  color: #8caaee;
+}
+
+.sh {
+  /* LiteralStringHeredoc */
+  color: #737994;
+}
+
+.s3 {
+  /* LiteralStringDoc */
+  color: #737994;
+}
+
+.sm {
+  /* LiteralNumber */
+  color: #ef9f76;
+}
+
+.mb {
+  /* LiteralNumberBin */
+  color: #ef9f76;
+}
+
+.mh {
+  /* LiteralNumberHex */
+  color: #ef9f76;
+}
+
+.mi {
+  /* LiteralNumberInteger */
+  color: #ef9f76;
+}
+
+.mf {
+  /* LiteralNumberFloat */
+  color: #ef9f76;
+}
+
+.mil {
+  /* LiteralNumberIntegerLong */
+  color: #ef9f76;
+}
+
+.mo {
+  /* LiteralNumberOct */
+  color: #ef9f76;
+}
+
+.o {
+  /* Operator */
+  font-weight: bold;
+  color: #99d1db;
+}
+
+.ow {
+  /* OperatorWord */
+  font-weight: bold;
+  color: #99d1db;
+}
+
+.c {
+  /* Comment */
+  font-style: italic;
+  color: #737994;
+}
+
+.cs {
+  /* CommentSpecial */
+  font-style: italic;
+  color: #737994;
+}
+
+.cd {
+  /* CommentHashbang */
+  font-style: italic;
+  color: #737994;
+}
+
+.cp {
+  /* CommentPreproc */
+  font-style: italic;
+  color: #737994;
+}
+
+.cpf {
+  /* CommentPreprocFile */
+  font-weight: bold;
+  color: #737994;
+}
+
+.g {
+  /* Generic */
+  color: #c6d0f5;
+}
+
+.gi {
+  /* GenericInserted */
+  background-color: #414559;
+  color: #a6d189;
+}
+
+.gd {
+  /* GenericDeleted */
+  background-color: #414559;
+  color: #e78284;
+}
+
+.ge {
+  /* GenericEmph */
+  font-style: italic;
+  color: #c6d0f5;
+}
+
+.gs {
+  /* GenericStrong */
+  font-weight: bold;
+  color: #c6d0f5;
+}
+
+.gu {
+  /* GenericUnderline */
+  text-decoration: underline;
+  color: #c6d0f5;
+}
+
+.gh {
+  /* GenericHeading */
+  font-weight: bold;
+  color: #ef9f76;
+}
+
+.gsh {
+  /* GenericSubheading */
+  font-weight: bold;
+  color: #ef9f76;
+}
+
+.go {
+  /* GenericOutput */
+  color: #c6d0f5;
+}
+
+.gp {
+  /* GenericPrompt */
+  color: #c6d0f5;
+}
+
+.gr {
+  /* GenericError */
+  color: #e78284;
+}
+
+.gt {
+  /* GenericTraceback */
+  color: #e78284;
+}
+
+.hl {
+  /* LineHighlight */
+  background-color: #51576d;
+}
+
+.ln {
+  /* LineNumbers */
+  color: #838ba7;
+}
+
+.lnt {
+  /* LineNumbersTable */
+  color: #838ba7;
+}
+
+.err {
+  /* Error */
+  color: #e78284;
+}

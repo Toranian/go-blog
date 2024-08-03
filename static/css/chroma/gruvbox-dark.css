@@ -1,0 +1,167 @@
+.code-block {
+  background-color: #282828;
+  color: #ebdbb2;
+}
+.k {
+  /* Keyword */
+  color: #fe8019;
+}
+
+.kt {
+  /* KeywordType */
+  color: #fabd2f;
+}
+
+.n {
+  /* Name */
+  color: #ebdbb2;
+}
+
+.na {
+  /* NameAttribute */
+  font-weight: bold;
+  color: #b8bb26;
+}
+
+.nb {
+  /* NameBuiltin */
+  color: #fabd2f;
+}
+
+.nc {
+  /* NameClass */
+  color: #fabd2f;
+}
+
+.nd {
+  /* NameConstant */
+  color: #d3869b;
+}
+
+.ne {
+  /* NameEntity */
+  color: #fabd2f;
+}
+
+.nx {
+  /* NameException */
+  color: #fb4934;
+}
+
+.nf {
+  /* NameFunction */
+  color: #fabd2f;
+}
+
+.nl {
+  /* NameLabel */
+  color: #fb4934;
+}
+
+.nt {
+  /* NameTag */
+  color: #fb4934;
+}
+
+.v {
+  /* NameVariable */
+  color: #ebdbb2;
+}
+
+.s {
+  /* LiteralString */
+  color: #b8bb26;
+}
+
+.ss {
+  /* LiteralStringSymbol */
+  color: #83a598;
+}
+
+.m {
+  /* LiteralNumber */
+  color: #d3869b;
+}
+
+.mf {
+  /* LiteralNumberFloat */
+  color: #d3869b;
+}
+
+.o {
+  /* Operator */
+  color: #fe8019;
+}
+
+.c {
+  /* Comment */
+  font-style: italic;
+  color: #928374;
+}
+
+.cp {
+  /* CommentPreproc */
+  color: #8ec07c;
+}
+
+.g {
+  /* Generic */
+  color: #ebdbb2;
+}
+
+.gd {
+  /* GenericDeleted */
+  background-color: #fb4934;
+  color: #282828;
+}
+
+.ge {
+  /* GenericEmph */
+  text-decoration: underline;
+  color: #83a598;
+}
+
+.gr {
+  /* GenericError */
+  font-weight: bold;
+  background-color: #fb4934;
+}
+
+.gh {
+  /* GenericHeading */
+  font-weight: bold;
+  color: #b8bb26;
+}
+
+.gi {
+  /* GenericInserted */
+  background-color: #b8bb26;
+  color: #282828;
+}
+
+.go {
+  /* GenericOutput */
+  color: #504945;
+}
+
+.gp {
+  /* GenericPrompt */
+  color: #ebdbb2;
+}
+
+.gs {
+  /* GenericStrong */
+  color: #ebdbb2;
+}
+
+.gu {
+  /* GenericSubheading */
+  font-weight: bold;
+  color: #b8bb26;
+}
+
+.gt {
+  /* GenericTraceback */
+  font-weight: bold;
+  background-color: #fb4934;
+}
