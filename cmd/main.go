@@ -10,6 +10,7 @@ import (
 	"os"
 	"path"
 	"strconv"
+	"strings"
 
 	chromaHTML "github.com/alecthomas/chroma/formatters/html"
 	"github.com/alecthomas/chroma/lexers"
@@ -20,7 +21,7 @@ import (
 	"github.com/gomarkdown/markdown/html"
 	"github.com/gomarkdown/markdown/parser"
 
-	config "goblog/internal/configure"
+	configure "goblog/internal/configure"
 )
 
 // renderParagraph handles the rendering of paragraph nodes
@@ -29,6 +30,41 @@ func renderParagraph(w io.Writer, _ *ast.Paragraph, entering bool) {
 		io.WriteString(w, "<p>")
 	} else {
 		io.WriteString(w, "</p>")
+	}
+}
+
+// func renderHeading(w io.Writer, h *ast.Heading, entering bool, path string) {
+//
+// 	fmt.Printf("%s", string(h.Level))
+// 	if entering {
+// 		header := fmt.Sprintf("<a href=\"%s#%s\">", path, h.Content)
+// 		io.WriteString(w, header)
+// 	} else {
+// 		io.WriteString(w, "</a>")
+// 	}
+// }
+
+// renderHeading renders a heading element, wrapping it with an anchor link.
+func renderHeading(w io.Writer, h *ast.Heading, entering bool, path string) {
+	if entering {
+		// Extract the text content of the heading
+		var contentBuilder strings.Builder
+		for _, node := range h.Children {
+			if textNode, ok := node.(*ast.Text); ok {
+				contentBuilder.Write(textNode.Literal)
+			}
+		}
+
+		fmt.Printf("%d", h.Level)
+
+		content := contentBuilder.String()
+		// Generate a valid HTML id for the heading link
+		id := strings.ReplaceAll(strings.ToLower(content), " ", "-")
+		// header := fmt.Sprintf(`<h%d id="%s"><a href="%s#%s" class="heading-link">`, h.Level, id, path, id)
+		header := fmt.Sprintf(`<a href="%s#%s" class="heading-link"><h%d id="%s">`, path, id, h.Level, id)
+		io.WriteString(w, header)
+	} else {
+		io.WriteString(w, fmt.Sprintf("</h%d></a>", h.Level))
 	}
 }
 
@@ -84,6 +120,9 @@ func customRenderHook(w io.Writer, node ast.Node, entering bool) (ast.WalkStatus
 		return ast.GoToNext, true
 	case *ast.CodeBlock:
 		renderCodeBlock(w, n, entering)
+		return ast.GoToNext, true
+	case *ast.Heading:
+		renderHeading(w, n, entering, "/")
 		return ast.GoToNext, true
 	}
 	return ast.GoToNext, false
@@ -169,7 +208,22 @@ func main() {
 	url := "http://localhost:" + portStr
 
 	// Load the configuration from the TOML file
-	config.GetConfigFromTOML()
+	config, err := configure.GetConfigFromTOML()
+	if err != nil {
+		fmt.Printf("Error loading configuration file. Error: %s", err)
+		return
+	}
+	fmt.Println("Configuration loaded successfully.")
+
+	content := configure.GenerateSCSSVariables(config.CSSVariables)
+
+	// Write the SCSS variables to a file
+	err = os.WriteFile("web/static/scss/_variables.scss", []byte(content), 0644)
+
+	if err != nil {
+		log.Fatal("Error writing SCSS variables to file.")
+		return
+	}
 
 	fs := http.FileServer(http.Dir("./web/static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))

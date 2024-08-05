@@ -6,6 +6,7 @@ keywords = ["blog", "go", "golang", "static", "site", "generator"]
 
 [cssvariables] # Optional
 lightthemebackground = "#faf3e0"
+# lightthemebackground = "#ff0000"
 lightthemetext = "#444"
 lightthemeaccent = "#333"
 lightthemelink = "#333"
