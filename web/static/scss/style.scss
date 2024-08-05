@@ -34,6 +34,36 @@ h6 {
   margin: 22px 0 0 0;
 }
 
+/* .heading-link { */
+/*   text-decoration: none; */
+/*   font-size: unset; */
+/*   color: red; */
+/* } */
+
+.heading-link {
+  text-decoration: none !important; /* Remove underline */
+  color: inherit !important; /* Inherit the text color */
+  display: block;
+
+  &::before {
+    all: unset;
+  }
+
+  &::after {
+    all: unset;
+
+    &:hover {
+      all: unset;
+    }
+  }
+}
+
+.heading-link:hover,
+.heading-link:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
 h1 + p,
 h2 + p,
 h3 + p {
