@@ -5,8 +5,6 @@ author = "Isaac Morrow"
 keywords = ["blog", "go", "golang", "static", "site", "generator"]
 
 
-
-
 [cssvariables] # Optional
 lightthemebackground = "#faf3e0"
 lightthemetext = "#444"
@@ -22,6 +20,6 @@ maincontentwidth = "800px"
 codeblockwidth = "1000px"
 
 [BlogData]
-contentdirectory = "web/docs"
-sourcefile = "web/docs/index.md"
+contentdirectory = "./web/docs"
+sourcefile = "index.md"
 staticdirectory = "./web/static/"
