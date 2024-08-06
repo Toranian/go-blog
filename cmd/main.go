@@ -24,28 +24,8 @@ import (
 	configure "goblog/internal/configure"
 )
 
-// renderParagraph handles the rendering of paragraph nodes
-func renderParagraph(w io.Writer, _ *ast.Paragraph, entering bool) {
-	if entering {
-		io.WriteString(w, "<p>")
-	} else {
-		io.WriteString(w, "</p>")
-	}
-}
-
-// func renderHeading(w io.Writer, h *ast.Heading, entering bool, path string) {
-//
-// 	fmt.Printf("%s", string(h.Level))
-// 	if entering {
-// 		header := fmt.Sprintf("<a href=\"%s#%s\">", path, h.Content)
-// 		io.WriteString(w, header)
-// 	} else {
-// 		io.WriteString(w, "</a>")
-// 	}
-// }
-
 // renderHeading renders a heading element, wrapping it with an anchor link.
-func renderHeading(w io.Writer, h *ast.Heading, entering bool, path string) {
+func renderHeading(w io.Writer, h *ast.Heading, entering bool) {
 	if entering {
 		// Extract the text content of the heading
 		var contentBuilder strings.Builder
@@ -55,13 +35,13 @@ func renderHeading(w io.Writer, h *ast.Heading, entering bool, path string) {
 			}
 		}
 
-		fmt.Printf("%d", h.Level)
-
 		content := contentBuilder.String()
+
 		// Generate a valid HTML id for the heading link
 		id := strings.ReplaceAll(strings.ToLower(content), " ", "-")
+
 		// header := fmt.Sprintf(`<h%d id="%s"><a href="%s#%s" class="heading-link">`, h.Level, id, path, id)
-		header := fmt.Sprintf(`<a href="%s#%s" class="heading-link"><h%d id="%s">`, path, id, h.Level, id)
+		header := fmt.Sprintf(`<a href="#%s" class="heading-link"><h%d id="%s">`, id, h.Level, id)
 		io.WriteString(w, header)
 	} else {
 		io.WriteString(w, fmt.Sprintf("</h%d></a>", h.Level))
@@ -115,14 +95,11 @@ func renderCodeBlock(w io.Writer, c *ast.CodeBlock, entering bool) {
 // myRenderHook is the custom render hook for handling different node types
 func customRenderHook(w io.Writer, node ast.Node, entering bool) (ast.WalkStatus, bool) {
 	switch n := node.(type) {
-	case *ast.Paragraph:
-		renderParagraph(w, n, entering)
-		return ast.GoToNext, true
 	case *ast.CodeBlock:
 		renderCodeBlock(w, n, entering)
 		return ast.GoToNext, true
 	case *ast.Heading:
-		renderHeading(w, n, entering, "/")
+		renderHeading(w, n, entering)
 		return ast.GoToNext, true
 	}
 	return ast.GoToNext, false
@@ -210,12 +187,13 @@ func main() {
 	// Load the configuration from the TOML file
 	config, err := configure.GetConfigFromTOML()
 	if err != nil {
-		fmt.Printf("Error loading configuration file. Error: %s", err)
+		log.Fatalf("Error loading configuration file. Error: %s", err)
 		return
 	}
 	fmt.Println("Configuration loaded successfully.")
 
 	content := configure.GenerateSCSSVariables(config.CSSVariables)
+	blogData := config.BlogData
 
 	// Write the SCSS variables to a file
 	err = os.WriteFile("web/static/scss/_variables.scss", []byte(content), 0644)
@@ -225,7 +203,10 @@ func main() {
 		return
 	}
 
-	fs := http.FileServer(http.Dir("./web/static"))
+	fmt.Printf("Initialization successful.\n")
+
+	// fs := http.FileServer(http.Dir("./web/static"))
+	fs := http.FileServer(http.Dir(blogData.StaticDirectory))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	http.HandleFunc("/", handler)

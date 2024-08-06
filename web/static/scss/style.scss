@@ -34,12 +34,6 @@ h6 {
   margin: 22px 0 0 0;
 }
 
-/* .heading-link { */
-/*   text-decoration: none; */
-/*   font-size: unset; */
-/*   color: red; */
-/* } */
-
 .heading-link {
   text-decoration: none !important; /* Remove underline */
   color: inherit !important; /* Inherit the text color */
@@ -90,41 +84,40 @@ a {
   overflow: hidden;
   transform: translateY(10px);
   transition: color 0.2s ease-in-out;
-}
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 100%;
+    height: 2px;
+    opacity: 0.5;
+    transform: translateX(0);
+    transition: transform 0.2s ease-in-out;
+    border-radius: 2px;
+    background-color: var(--link);
+  }
 
-/* Initial state */
-a::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 4px;
-  width: 100%;
-  height: 2px;
-  opacity: 0.5;
-  transform: translateX(0);
-  transition: transform 0.2s ease-in-out;
-  border-radius: 2px;
-  background-color: var(--link);
-}
-a:hover::before {
-  transform: translateX(100%);
-}
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 100%;
+    height: 2px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    background-color: var(--accent);
+    border-radius: 2px;
+  }
 
-/* Secondary state */
-a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 4px;
-  width: 100%;
-  height: 2px;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
-  background-color: var(--accent);
-  border-radius: 2px;
-}
-a:hover::after {
-  transform: translateX(0);
+  &:hover::after {
+    transform: translateX(0);
+  }
+
+  &:hover::before {
+    transform: translateX(100%);
+  }
 }
 
 .content {
@@ -185,7 +178,7 @@ img {
 
 button {
   border: solid 1px;
-  border-color: #333;
+  border-color: var(--accent);
   background-color: transparent;
   padding: 8px 12px;
   border-radius: 6px;
@@ -194,8 +187,8 @@ button {
   transition: 0.1s ease background-color;
 
   &:hover {
-    background-color: #333;
-    color: #f5f5f5;
+    background-color: var(--accent);
+    color: var(--bg);
   }
 }
 
@@ -216,11 +209,12 @@ nav {
       display: block;
       width: 0;
       height: 2px;
-      background: #333;
+      background: var(--link);
       transition: width 0.3s;
     }
     &:before {
       all: unset;
+      background: var(--link);
     }
   }
 
@@ -253,8 +247,16 @@ nav {
   }
 
   a {
-    color: var(--dark-link); // Dark mode link color
+    color: var(--dark-link);
+    &::before {
+      background-color: var(--dark-link);
+    }
+
+    &::after {
+      background-color: var(--dark-accent);
+    }
   }
+
   button {
     border-color: var(--dark-accent);
     color: var(--dark-accent);

@@ -10,6 +10,7 @@ import (
 type Config struct {
 	CSSVariables CSSVariables
 	MetaData     MetaData
+	BlogData     BlogData
 }
 
 type MetaData struct {
@@ -35,6 +36,17 @@ type CSSVariables struct {
 	// Widths for the main content and expanded codeblocks
 	MainContentWidth string
 	CodeBlockWidth   string
+}
+
+type BlogData struct {
+	// The content directory is where the markdown files are stored
+	ContentDirectory string
+
+	// The source file is the file to initially display at the route "/"
+	SourceFile string
+
+	// The static directory is where the CSS, JS, and Image files are stored
+	StaticDirectory string
 }
 
 func GetConfigFromTOML() (Config, error) {

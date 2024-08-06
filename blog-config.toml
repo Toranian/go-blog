@@ -4,9 +4,11 @@ description = "Blog built in Go!"
 author = "Isaac Morrow"
 keywords = ["blog", "go", "golang", "static", "site", "generator"]
 
+
+
+
 [cssvariables] # Optional
 lightthemebackground = "#faf3e0"
-# lightthemebackground = "#ff0000"
 lightthemetext = "#444"
 lightthemeaccent = "#333"
 lightthemelink = "#333"
@@ -19,3 +21,7 @@ darkthemelink = "#9ec"
 maincontentwidth = "800px"
 codeblockwidth = "1000px"
 
+[BlogData]
+contentdirectory = "web/docs"
+sourcefile = "web/docs/index.md"
+staticdirectory = "./web/static/"
