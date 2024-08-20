@@ -37,7 +37,6 @@ func (h *BlogHandler) Handler(w http.ResponseWriter, r *http.Request) {
 		name = lastPart
 	}
 
-	fmt.Println("SKEET SKEET Request for: ", fileName)
 	missingPage, err := template.ParseFiles("web/components/404.html")
 
 	fmt.Println("Looking for: ", config.BlogData.ContentDirectory+fileName)

@@ -20,6 +20,6 @@ maincontentwidth = "800px"
 codeblockwidth = "1000px"
 
 [BlogData]
-contentdirectory = "./web/docs"
+contentdirectory = "./web/docs/"
 sourcefile = "index.md"
 staticdirectory = "./web/static/"
