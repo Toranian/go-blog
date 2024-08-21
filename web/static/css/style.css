@@ -225,6 +225,11 @@ nav .nav-links {
   transition: 0.3s ease-in-out fill;
 }
 
+@media (max-width: 800px) {
+  .code-block {
+    font-size: 14px;
+  }
+}
 /* Dark mode styles */
 .dark-mode {
   background-color: var(--dark-bg);

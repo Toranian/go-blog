@@ -5,7 +5,7 @@ tmp_dir = "tmp"
 [build]
   args_bin = []
   bin = "./tmp/main"  # Path where the built binary will be saved
-  cmd = "sass web/static/scss:web/static/css/ && go build -o ./tmp/main cmd/main.go"  # Command to build the binary from cmd/main.go
+  cmd = "go run cmd/main.go"  # Command to build the binary from cmd/main.go
   delay = 1000
   exclude_dir = ["assets", "tmp", "vendor", "testdata"]
   exclude_file = []
@@ -21,7 +21,6 @@ tmp_dir = "tmp"
   poll = false
   poll_interval = 0
   # post_cmd = ["sass --watch web/static/scss/style.scss:web/static/css/style.css"]  # Command to run SASS build
-  # post_cmd = ["curl -s http://localhost:3000/__air__"]  # Command to refresh the page
   rerun = false
   rerun_delay = 500
   send_interrupt = false
