@@ -1,50 +1,54 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Title}}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/static/css/chroma/catppuccin-frappe.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <script src="/static/js/main.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ .Title}}</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="/static/css/chroma/catppuccin-frappe.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="/static/css/style.css" />
-  <script src="/static/js/main.js"></script>
-</head>
+  <body>
+    <div class="content">
+      <header>
+        <nav>
+          <img src="/static/svg/MuonLogoTitle.svg" alt="Logo" id="logo" />
+          <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+          </div>
+        </nav>
+      </header>
 
-<body>
-  <div class="content">
-    <header>
-      <nav>
-        <img src="/static/svg/MuonLogoTitle.svg" alt="Logo" id="logo" />
-        <div class="nav-links">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
-        </div>
-      </nav>
-    </header>
-
-    <button onclick="toggleExpandCode()" id="expand-button">
-      Expand Code
-    </button>
-    <button onclick="toggleDarkMode()" id="dark-mode-button">
-      Dark Mode
-    </button>
-    <main>{{.Body}}</main>
-  </div>
-  <footer>
-    <p>
-      Made with ♥ by Isaac |
-      <a href="https://www.github.com/Toranian">GitHub</a>
-    </p>
-  </footer>
-</body>
-
+      <button onclick="toggleExpandCode()" id="expand-button">
+        Expand Code
+      </button>
+      <button onclick="toggleDarkMode()" id="dark-mode-button">
+        Dark Mode
+      </button>
+      <main>{{.Body}}</main>
+    </div>
+    <footer>
+      <p>
+        Made with ♥ by Isaac |
+        <a href="https://www.github.com/Toranian">GitHub</a>
+      </p>
+    </footer>
+  </body>
 </html>
