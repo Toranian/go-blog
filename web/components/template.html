@@ -21,13 +21,19 @@
     />
     <link rel="stylesheet" href="/static/css/style.css" />
     <script src="/static/js/main.js"></script>
+    <link rel="icon" type="image/x-icon" href="/static/svg/box-light.svg" />
   </head>
 
   <body>
     <div class="content">
       <header>
         <nav>
-          <img src="/static/svg/MuonLogoTitle.svg" alt="Logo" id="logo" />
+          <img
+            src="/static/svg/box-dark.svg"
+            alt="Logo"
+            id="logo"
+            height="18px"
+          />
           <div class="nav-links">
             <a href="/">Home</a>
             <a href="/about">About</a>
@@ -37,7 +43,7 @@
       </header>
 
       <button onclick="toggleExpandCode()" id="expand-button">
-        Expand Code
+        <img src="static/svg/maximize-2.svg" alt="Expand" />
       </button>
       <button onclick="toggleDarkMode()" id="dark-mode-button">
         Dark Mode

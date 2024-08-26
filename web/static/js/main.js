@@ -9,13 +9,18 @@ function toggleExpandCode() {
   Array.from(codeElements).forEach((element) => {
     if (element.classList.contains("expand")) {
       buttonText = "Collapse Code";
+      buttonText = loadSvg("minimize-2", 14);
     }
   });
   if (buttonText === "") {
-    buttonText = "Expand Code";
+    buttonText = loadSvg("maximize-2", 14);
   }
 
   button.innerHTML = buttonText;
+}
+
+function loadSvg(name, size) {
+  return `<img src="/static/svg/${name}.svg" alt="${name}" width=${size} height=${size}/ class="svg-icon">`;
 }
 
 function toggleDarkMode() {
@@ -27,10 +32,13 @@ function toggleDarkMode() {
 
   // Update the button text and save the mode in a cookie
   if (body.classList.contains("dark-mode")) {
-    button.innerHTML = "Light Mode";
+    // button.innerHTML = "Light Mode";
+    button.innerHTML = loadSvg("sun", 14);
     document.cookie = "darkMode=enabled; path=/; max-age=31536000"; // 1 year
   } else {
-    button.innerHTML = "Dark Mode";
+    // button.innerHTML = "Dark Mode";
+
+    button.innerHTML = loadSvg("moon-star", 14);
     document.cookie = "darkMode=disabled; path=/; max-age=31536000"; // 1 year
   }
 }
@@ -50,10 +58,10 @@ function applyDarkMode() {
 
   if (darkMode === "enabled") {
     body.classList.add("dark-mode");
-    button.innerHTML = "Light Mode";
+    button.innerHTML = loadSvg("sun", 14);
   } else {
     body.classList.remove("dark-mode");
-    button.innerHTML = "Dark Mode";
+    button.innerHTML = loadSvg("moon-star", 14);
   }
 }
 
