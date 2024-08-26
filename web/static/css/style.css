@@ -24,7 +24,7 @@ body {
   line-height: 1.8;
   max-width: 800px;
   padding: 0 13px;
-  font-family: "Source Serif 4", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   transition: 0.3s ease-in-out background-color;
 }
 
@@ -139,6 +139,14 @@ img {
   border-radius: 6px;
 }
 
+p > code {
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.0823529412);
+  transform: translateY(2px);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
 .code-block {
   text-shadow: none;
   font-size: 16px;
@@ -160,20 +168,18 @@ img {
   padding: 8px 10px;
 }
 
-::-webkit-scrollbar {
+.code-block::-webkit-scrollbar {
   height: 6px;
   width: 4px;
   background-color: #303446;
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
 }
-
-::-webkit-scrollbar-thumb:horizontal {
+.code-block::-webkit-scrollbar-thumb:horizontal {
   background: #c6d0f5;
   border-radius: 10px;
 }
-
-::-webkit-scrollbar-thumb:vertical {
+.code-block::-webkit-scrollbar-thumb:vertical {
   background: #c6d0f5;
   border-radius: 10px;
 }
@@ -271,6 +277,9 @@ nav .nav-links {
 }
 .dark-mode #logo {
   filter: invert(1);
+}
+.dark-mode p > code {
+  background-color: rgba(255, 255, 255, 0.1254901961);
 }
 
 /*# sourceMappingURL=style.css.map */
