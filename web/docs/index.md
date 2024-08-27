@@ -2,7 +2,7 @@
 
 This blogging application was created to leverage the ease of use of Markdown documents, with the speed of Go, and the simplicity of basic styling.
 
-![CAT](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcc0.photo%2Fwp-content%2Fuploads%2F2017%2F02%2FOrange-grumpy-cat--2048x1365.jpg&f=1&nofb=1&ipt=1cdb927174be09e0eb59c7110d8d47b005ab96227c4127086ba649725738206a&ipo=images)
+![Beach Image](https://lh3.googleusercontent.com/pw/AP1GczM47iCWwqJF9EMK4uXT6bvUUGilIPKd8CJWR6gdd7i_DshBczQ1UaDWYbmXbwL9R5lKOhpqKYOUaVtiTCI-7IbEZD-IMDHgJUJ5zju3zpV7CP_nZnQ_wIxARp3e9-wwrQpDKDB3Bav9K1r2AsuQ7gmLPQ=w1739-h978-s-no-gm?authuser=0)
 
 ### The Tech Stack
 

@@ -27,7 +27,7 @@
   <body>
     <div class="content">
       <header>
-        <nav>
+        <!-- <nav>
           <img
             src="/static/svg/box-dark.svg"
             alt="Logo"
@@ -39,15 +39,25 @@
             <a href="/about">About</a>
             <a href="/contact">Contact</a>
           </div>
-        </nav>
+        </nav> -->
       </header>
 
-      <button onclick="toggleExpandCode()" id="expand-button">
-        <img src="static/svg/maximize-2.svg" alt="Expand" />
-      </button>
-      <button onclick="toggleDarkMode()" id="dark-mode-button">
-        Dark Mode
-      </button>
+      <div class="control-bar">
+        <button
+          onclick="toggleExpandCode()"
+          id="expand-button"
+          class="icon-container"
+        >
+          <img src="static/svg/maximize-2.svg" alt="Expand" class="icon" />
+        </button>
+        <button
+          onclick="toggleDarkMode()"
+          id="dark-mode-button"
+          class="icon-container"
+        >
+          <img src="static/svg/moon-star.svg" alt="Theme switch" class="icon" />
+        </button>
+      </div>
       <main>{{.Body}}</main>
     </div>
     <footer>

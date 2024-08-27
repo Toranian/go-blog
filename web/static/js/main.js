@@ -20,7 +20,7 @@ function toggleExpandCode() {
 }
 
 function loadSvg(name, size) {
-  return `<img src="/static/svg/${name}.svg" alt="${name}" width=${size} height=${size}/ class="svg-icon">`;
+  return `<img src="/static/svg/${name}.svg" alt="${name}" class="icon"/>`;
 }
 
 function toggleDarkMode() {
