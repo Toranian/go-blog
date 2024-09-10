@@ -1,20 +1,19 @@
 package main
 
 import (
+	"cmp"
 	"fmt"
 	"log"
 	"net/http"
 	"os"
-	"strconv"
 
 	configure "goblog/internal/configure"
 	"goblog/internal/handlers"
 )
 
 func main() {
-	const port uint16 = 3000
-	portStr := strconv.Itoa(int(port))
-	url := "http://localhost:" + portStr
+	port := cmp.Or(os.Getenv("PORT"), "3000")
+	url := "http://localhost:" + port
 
 	// Load the configuration from the TOML file
 	config, err := configure.GetConfigFromTOML()
@@ -49,5 +48,5 @@ func main() {
 	})
 
 	fmt.Printf("Server running at %s\n", url)
-	log.Fatal(http.ListenAndServe(":"+portStr, nil))
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
