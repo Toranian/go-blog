@@ -14,8 +14,15 @@ body {
   line-height: 1.8;
   max-width: 800px;
   padding: 0 13px;
-  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif;
+  font-family:
+    "Nunito",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   transition: 0.3s ease-in-out background-color;
 }
 
@@ -55,8 +62,27 @@ h6 {
 
 h1 + p,
 h2 + p,
-h3 + p {
+h3 + p,
+h4 + p {
   margin-top: 0px;
+}
+
+p + a h1,
+p + a h2,
+p + a h3,
+p + a h4,
+p + a h5,
+p + a h6 {
+  margin-top: 0;
+}
+
+ul + a h1,
+ul + a h2,
+ul + a h3,
+ul + a h4,
+ul + a h5,
+ul + a h6 {
+  margin-top: 0;
 }
 
 p + ul {
@@ -241,17 +267,30 @@ nav {
   transition: 0.3s ease-in-out fill;
 }
 
-.control-bar {
+.control-buttons-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   position: fixed;
+  top: 0;
+  left: 0;
+  padding-right: 32px;
+  flex-gap: 16px;
+}
+
+.control-bar {
   right: 6px;
   top: 6px;
   display: flex;
   flex-direction: row;
   gap: 4px;
+  position: relative;
 }
 
 .icon-container {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   height: 32px;
@@ -270,6 +309,53 @@ nav {
 @media (max-width: 800px) {
   .code-block {
     font-size: 14px;
+  }
+
+  body,
+  a,
+  p {
+    font-size: 16px !important;
+  }
+
+  /* Mobile Headings */
+  h1 {
+    font-size: 28px; /* Adjust between 24px–32px as needed */
+  }
+
+  h2 {
+    font-size: 24px; /* Adjust between 20px–28px as needed */
+  }
+
+  h3 {
+    font-size: 20px; /* Adjust between 18px–24px as needed */
+  }
+
+  h4 {
+    font-size: 18px; /* Adjust between 16px–20px as needed */
+  }
+
+  h5 {
+    font-size: 16px; /* Adjust between 14px–18px as needed */
+  }
+
+  h6 {
+    font-size: 14px; /* Adjust between 12px–16px as needed */
+  }
+
+  ol {
+    margin: 8px 0;
+  }
+
+  p + ol {
+    margin: 0;
+  }
+
+  ol + p {
+    margin: 0;
+  }
+
+  p + p {
+    margin-top: 8px;
   }
 }
 /* Dark mode styles */

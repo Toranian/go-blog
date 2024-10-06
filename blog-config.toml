@@ -6,7 +6,7 @@ keywords = ["blog", "go", "golang", "static", "site", "generator"]
 
 
 [cssvariables] # Optional
-lightthemebackground = "#faf3e0"
+lightthemebackground = "#fffcf4"
 lightthemetext = "#444"
 lightthemeaccent = "#333"
 lightthemelink = "#333"
@@ -20,6 +20,6 @@ maincontentwidth = "800px"
 codeblockwidth = "1000px"
 
 [BlogData]
-contentdirectory = "./web/docs/"
+contentdirectory = "./web/blog/"
 sourcefile = "index.md"
 staticdirectory = "./web/static/"
