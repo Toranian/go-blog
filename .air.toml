@@ -4,7 +4,7 @@ tmp_dir = "tmp"
 
 [build]
   args_bin = []
-  bin = "./tmp/main"  # Path where the built binary will be saved
+  # bin = "./tmp/main"  # Path where the built binary will be saved
   cmd = "go run cmd/main.go"  # Command to build the binary from cmd/main.go
   delay = 1000
   exclude_dir = ["assets", "tmp", "vendor", "testdata"]

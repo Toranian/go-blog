@@ -79,7 +79,7 @@ func GenerateSCSSVariables(vars CSSVariables) string {
   --mw: %s; // Main width
   --cw: %s; // Code block width max
 
-  --rounded: 6px;
+  --rounded: 8px;
 }`, vars.LightThemeBackground, vars.LightThemeText, vars.LightThemeAccent, vars.LightThemeLink,
 		vars.DarkThemeBackground, vars.DarkThemeText, vars.DarkThemeAccent, vars.DarkThemeLink,
 		vars.MainContentWidth, vars.CodeBlockWidth)

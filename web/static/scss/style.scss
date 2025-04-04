@@ -15,7 +15,7 @@ body {
   max-width: 800px;
   padding: 0 13px;
   font-family:
-    "Bricolage Grotesque",
+    "Onest",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -158,7 +158,7 @@ footer {
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 6px;
+  border-radius: var(--rounded);
 }
 
 p > code {
@@ -239,7 +239,7 @@ nav {
 
   a {
     text-decoration: none;
-    font-family: "Bricolage Grotesque", sans-serif;
+    font-family: "Onest", sans-serif;
     &:after {
       content: "";
       display: block;

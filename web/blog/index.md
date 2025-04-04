@@ -4,7 +4,7 @@ Computer Scientist with a Specialization in Software Systems. UVic 2024.
 
 <hr />
 
-![Beach image](/static/images/beach.jpg)
+![Beach image](/static/images/hiking.jpg)
 
 ## Work Experience
 
@@ -43,7 +43,7 @@ _River City Future Technologies LTD._
 
 I've worked on countless projects over the years, from software, to hobbiest electronics, to 3D printing and design!
 
-View all my projects [here!]('/projects')
+View all my projects [here!]('/projects/')
 
 ### Dingo - Full-stack Discord Clone
 

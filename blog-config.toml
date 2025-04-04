@@ -1,12 +1,12 @@
 [metadata]
-title = "Blog"
+title = "Isaac Morrow"
 description = "Blog built in Go!"
 author = "Isaac Morrow"
 keywords = ["blog", "go", "golang", "static", "site", "generator"]
 
 
 [cssvariables] # Optional
-lightthemebackground = "#fffcf4"
+lightthemebackground = "#ffffff"
 lightthemetext = "#444"
 lightthemeaccent = "#333"
 lightthemelink = "#333"

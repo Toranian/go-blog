@@ -14,6 +14,7 @@ import (
 func main() {
 	port := cmp.Or(os.Getenv("PORT"), "3000")
 	url := "http://localhost:" + port
+	// url := "192.168.1.199" + port
 
 	// Load the configuration from the TOML file
 	config, err := configure.GetConfigFromTOML()
